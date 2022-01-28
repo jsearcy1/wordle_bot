@@ -1,7 +1,5 @@
 import utils
 import numpy as np
-import matplotlib.pyplot as plt
-from tqdm import tqdm
 from context import Context
 from multiprocessing import Pool,Value
 import atexit
