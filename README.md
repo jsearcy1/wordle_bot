@@ -3,9 +3,11 @@ A bot to play wordle
 
 # Quick Start
 
-1. Checkout
-
-```git clone https://github.com/jsearcy1/wordle_bot.git ```
+1. Checkout and install requirements
+```
+    git clone https://github.com/jsearcy1/wordle_bot.git 
+    pip install -r requirements.txt 
+```
 
 2. In your package directory
 ```
