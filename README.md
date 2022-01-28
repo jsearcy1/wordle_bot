@@ -20,6 +20,7 @@ Enter Worlde Output String 5x(x/y/g):
    * x if the character is grey
    * y if the character is yellow
    * g if the character is green
+5. Repeat - As you get close to the end the program will print the possible answers left
 ### Example Game 
 ```
 >> python minmax.py
