@@ -30,9 +30,10 @@ class MinMax():
             return self.start_guess
 
         lengths=[]
-        test=len(allowed_guesses)
+        test=len(allowed_answers)
         if test==0:
             print("Some Thing has gone wrong, no possible answers remain")
+            print(allowed_guesses,allowed_answers)
             sys.exit()
 #        for g in allowed_guesses:
 #            lengths.append(utils.get_allowed_set_len(g,self.context.copy()))
@@ -67,7 +68,7 @@ class MinMax():
             if len(allowed_answers) ==1:
                 guess=allowed_answers[0]
             else:
-                guess=self.guess(allowed_answers,utils.possible_guesses)
+                    guess=self.guess(allowed_answers,utils.possible_guesses)
 #            print(guess)
 #            print('ag',self.context)
             
@@ -75,12 +76,13 @@ class MinMax():
             self.context.add_context(_con)
             #print(self.context)
             allowed_answers= utils.allowed_list(utils.possible_answers,self.context)
+ #           if len(allowed_answers)==0:
             #print(allowed_answers)
             itr+=1
 #            pdb.set_trace()
             if verbose:
                 print('minmax:',guess,len(allowed_answers))
-                if len(allowed_answers) < 10: print('Possible Ans: ',allowed_answers)
+                if len(allowed_answers) < 100000: print('Possible Ans: ',allowed_answers)
             if win:
                 print('Win!',itr)
                 break
@@ -121,7 +123,7 @@ class MinMax():
     
 
 if __name__=="__main__": 
-    player=MinMax('arise')#arise #trace most likley to win
+    player=MinMax('arise')#'arise')#arise #trace most likley to win
     player.play()
 #    player.trail('serai',verbose=True)
     if False:

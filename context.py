@@ -28,11 +28,15 @@ class Context():
                 indict={word[ci]:[ci]}
                 self.combine_dict(self.included,indict)
             elif p =='g':
+                if word[ci] in self.excluded: #Needed for double letters where the first one in gray and the last is green
+                    del self.excluded[word[ci]]
                 indict={word[ci]:[ci]}
                 self.combine_dict(self.exact,indict)
-            else:
+            elif (word[ci] not in self.included) and (word[ci] not in self.exact):
                 indict={word[ci]:[1]}
                 self.combine_dict(self.excluded,indict)
+            else:
+                pass
 
     def add_context(self,context):
         self.included= self.combine_dict(self.included,context.included)

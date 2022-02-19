@@ -17,6 +17,8 @@ def read_wordlist(fname):
     
 possible_answers=read_wordlist("wordle-answers-alphabetical.txt")
 possible_guesses=read_wordlist("wordle-allowed-guesses.txt")+possible_answers
+#possible_guesses=read_wordlist("food_5.txt")
+#possible_guesses=read_wordlist("dog_5.txt")
 alphabet='abcdefghijklmnopqrstuvwxyz'
 a_lookup= {v:i for i,v in enumerate(alphabet)}
 
